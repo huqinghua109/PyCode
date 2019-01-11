@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import copy
 
 excel_path = "E:\\Desktop\\PyCode\\data.xlsx"
-clean_excel_path = "E:\\Desktop\\PyCode\\cleandata_basis.xlsx"
+clean_excel_path = "E:\\Desktop\\uads\\AnalysisReport\\cleandata_basis.xlsx"
 clean_excel_path2 = "E:\\Desktop\\PyCode\\cleandata_basis2.xlsx"
 cornData_excel_path = "E:\\Desktop\\uads\\AnalysisReport\\CornData.xlsx"
 
@@ -137,7 +137,7 @@ def basis_year_cal(basis_df_orig, contract_month=1):
 	startday = dtt.datetime(2000,contract_month+3,1)
 	endday = dtt.datetime(2001,contract_month+3,1)
 	oneday = dtt.timedelta(days=1)
-	columns = ['%sbasis%s'% (i, contract_month) for i in range(2006,2020)]
+	columns = ['%sbasis%s'% (i, contract_month) for i in range(minyear+1,maxyear+2)]
 	rows = pd.date_range(startday, endday-oneday)
 	basis_year_df = pd.DataFrame(np.zeros([len(rows),len(columns)]), index=rows, columns=columns)
 
