@@ -1,0 +1,2 @@
+python CalPricesAndVol.py
+pause()
